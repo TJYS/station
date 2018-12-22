@@ -29,7 +29,7 @@ public class StationController {
         stationService.startById(id);
     }
 
-    @GetMapping("/start/{id:\\d+}")
+    @GetMapping("/stop/{id:\\d+}")
     public void stop(@PathVariable Integer id){
         stationService.stopById(id);
     }

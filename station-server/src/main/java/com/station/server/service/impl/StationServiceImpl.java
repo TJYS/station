@@ -3,16 +3,26 @@ package com.station.server.service.impl;
 import com.station.common.domain.Station;
 import com.station.server.repository.StationRepository;
 import com.station.server.service.StationService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class StationServiceImpl implements StationService {
     @Autowired
     StationRepository stationRepository;
+
+    @Autowired
+    LoadBalancerClient loadBalancerClient;
+    @Autowired
+    RestTemplate restTemplate;
 
     @Override
     public Station save(Station record) {
@@ -49,7 +59,9 @@ public class StationServiceImpl implements StationService {
 
     @Override
     public void startById(Integer id) {
-
+        ServiceInstance instance = loadBalancerClient.choose("station-agent");
+        String url = String.format("%s/station/start", instance.getUri().toString());
+        String result = restTemplate.getForObject(url, String.class);
     }
 
     @Override
