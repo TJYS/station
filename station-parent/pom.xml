@@ -8,7 +8,7 @@
         <version>2.0.7.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.huace.station</groupId>
+    <groupId>com.station</groupId>
     <artifactId>station-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>station-parent</name>
@@ -23,12 +23,13 @@
 
     <modules>
         <module>../station-server</module>
+        <module>../station-agent</module>
         <module>../station-common</module>
     </modules>
 
     <dependencies>
         <dependency>
-            <groupId>com.huace.station</groupId>
+            <groupId>com.station</groupId>
             <artifactId>station-common</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -110,7 +111,7 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.huace.station</groupId>
+                <groupId>com.station</groupId>
                 <artifactId>station-common</artifactId>
                 <version>${project.version}</version>
             </dependency>
