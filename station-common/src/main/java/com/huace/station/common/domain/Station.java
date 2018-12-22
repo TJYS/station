@@ -15,4 +15,7 @@ public class Station {
 
     @Column(name = "`station_name`")
     private String name;
+
+    @Column(name = "`station_status`")
+    private Short status;
 }
