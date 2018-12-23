@@ -15,22 +15,22 @@ public class StationController {
     StationService stationService;
 
     @PostMapping("/add")
-    public Station add(@RequestBody Station record){
+    public Station add(@RequestBody Station record) {
         return stationService.save(record);
     }
 
     @PostMapping("/modify/{id:\\d+}")
-    public Station modify(@PathVariable Integer id, @RequestBody Station record){
+    public Station modify(@PathVariable Integer id, @RequestBody Station record) {
         return stationService.modifyById(id, record);
     }
 
     @GetMapping("/start/{id:\\d+}")
-    public void start(@PathVariable Integer id){
-        stationService.startById(id);
+    public String start(@PathVariable Integer id) {
+        return stationService.startById(id);
     }
 
     @GetMapping("/stop/{id:\\d+}")
-    public void stop(@PathVariable Integer id){
+    public void stop(@PathVariable Integer id) {
         stationService.stopById(id);
     }
 }

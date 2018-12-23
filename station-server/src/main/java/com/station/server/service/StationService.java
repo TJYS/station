@@ -8,6 +8,7 @@ import java.util.Optional;
 public interface StationService {
     /**
      * 添加一个测站
+     *
      * @param record
      * @return
      */
@@ -15,6 +16,7 @@ public interface StationService {
 
     /**
      * 修改一个测站
+     *
      * @param id
      * @param record
      * @return
@@ -23,12 +25,14 @@ public interface StationService {
 
     /**
      * 删除一个测站
+     *
      * @param id
      */
     void deleteById(Integer id);
 
     /**
      * 根据id查询
+     *
      * @param id
      * @return
      */
@@ -36,18 +40,21 @@ public interface StationService {
 
     /**
      * 查询所有测站
+     *
      * @return
      */
     List<Station> findAll();
 
     /**
      * 根据id启动一个测站
+     *
      * @param id
      */
-    void startById(Integer id);
+    String startById(Integer id);
 
     /**
      * 根据id停止一个测站
+     *
      * @param id
      */
     void stopById(Integer id);

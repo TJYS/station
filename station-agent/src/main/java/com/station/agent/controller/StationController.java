@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/station", produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 public class StationController {
     @GetMapping("/start")
-    public String start(){
+    public String start() {
         return "start";
     }
 }
