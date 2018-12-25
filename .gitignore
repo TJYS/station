@@ -1,8 +1,8 @@
 #Project Files
-.iml
-.ipr
-.iws
-.idea/
+*.iml
+*.ipr
+*.iws
+*.idea/
 
 # Compiled class file
 *.class
