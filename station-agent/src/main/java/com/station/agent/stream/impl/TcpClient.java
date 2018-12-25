@@ -1,10 +1,14 @@
 package com.station.agent.stream.impl;
 
 import com.station.agent.stream.DataStream;
-import com.station.agent.stream.propertys.StreamProperty;
+import io.netty.channel.Channel;
 
 public class TcpClient implements DataStream {
-    private StreamProperty property;
+    private Channel channel;
+
+    public TcpClient(Channel channel) {
+        this.channel = channel;
+    }
 
     @Override
     public void open() {

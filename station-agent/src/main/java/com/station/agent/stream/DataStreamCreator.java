@@ -9,5 +9,5 @@ public interface DataStreamCreator<T extends StreamProperty> {
      * @param property 测站结构
      * @return 网络数据流
      */
-    DataStream create(T property);
+    DataStream create(T property) throws InterruptedException;
 }
