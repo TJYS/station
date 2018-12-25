@@ -1,6 +1,5 @@
-package com.station.agent.stream.impl;
+package com.station.agent.stream;
 
-import com.station.agent.stream.DataStreamCreator;
 import com.station.agent.stream.propertys.StreamProperty;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -31,7 +30,7 @@ public abstract class AbstractClientDataStreamCreator<T extends StreamProperty> 
     }
 
     protected Channel connect(String ip, Integer port) throws InterruptedException {
-        ChannelFuture future = bootstrap.connect(ip, port);
+        ChannelFuture future = bootstrap.connect(ip, port).sync();
         future.awaitUninterruptibly(SO_TIMEOUT);
         if (!future.isSuccess()){
             throw new InterruptedException("connect time out");
