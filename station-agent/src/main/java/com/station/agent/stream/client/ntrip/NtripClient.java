@@ -17,13 +17,12 @@ public class NtripClient extends BaseClient {
         this.channel = channel;
     }
 
-    public void setProperty(NtripStreamProperty property) {
-        this.property = property;
+    public void setProperty(StreamProperty property) {
+        this.property = (NtripStreamProperty) property;
     }
 
     @Override
-    public void open() throws UnsupportedEncodingException {
-        super.open();
+    protected void afterOpen() throws Exception {
         greeting();
     }
 
@@ -36,11 +35,6 @@ public class NtripClient extends BaseClient {
                 "Connection: Keep-Alive \r\n" +
                 "Authorization: Basic %s \r\n", property.getSource(), encodedUserpassword);
         channel.writeAndFlush(greet);
-    }
-
-    @Override
-    protected BaseHandler getHandler() {
-        return new BaseHandler();
     }
 
     @Override

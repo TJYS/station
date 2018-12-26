@@ -11,12 +11,14 @@ import io.netty.handler.codec.bytes.ByteArrayDecoder;
 import io.netty.handler.codec.bytes.ByteArrayEncoder;
 import io.netty.handler.timeout.IdleStateHandler;
 
-public abstract class AbstractClientDataStreamCreator<T extends StreamProperty> implements DataStreamCreator<T> {
-    private final NioEventLoopGroup worker = new NioEventLoopGroup();
-    private final Bootstrap bootstrap = new Bootstrap();
+import javax.annotation.PostConstruct;
+
+public abstract class AbstractClientDataStreamCreator implements DataStreamCreator {
+    private static final NioEventLoopGroup worker = new NioEventLoopGroup();
+    private static final Bootstrap bootstrap = new Bootstrap();
     private static final int SO_TIMEOUT = 6000;
 
-    public AbstractClientDataStreamCreator() {
+    static {
         bootstrap.group(worker);
         bootstrap.channel(NioSocketChannel.class);
         bootstrap.option(ChannelOption.RCVBUF_ALLOCATOR, new DefaultMaxBytesRecvByteBufAllocator())

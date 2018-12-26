@@ -2,12 +2,12 @@ package com.station.agent.stream;
 
 import com.station.agent.stream.propertys.StreamProperty;
 
-public interface DataStreamCreator<T extends StreamProperty> {
+public interface DataStreamCreator{
     /**
      * 根据Station生成数据流
      *
      * @param property 测站结构
      * @return 网络数据流
      */
-    DataStream create(T property) throws InterruptedException;
+   DataStream create(StreamProperty property) throws InterruptedException;
 }

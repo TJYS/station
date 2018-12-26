@@ -4,9 +4,9 @@ server:
 spring:
   application:
     name: station-agent
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-    healthcheck:
-      enabled: true
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#    healthcheck:
+#      enabled: true

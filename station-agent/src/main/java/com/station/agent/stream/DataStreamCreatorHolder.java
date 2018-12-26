@@ -22,7 +22,7 @@ public class DataStreamCreatorHolder {
     }
 
     public DataStreamCreator findDataStreamCreator(String type) {
-        String name = type.toLowerCase() + DataStreamCreator.class.getSimpleName();
+        String name = type + DataStreamCreator.class.getSimpleName();
         DataStreamCreator creator = dataStreamCreators.get(name);
         if (creator == null) {
             throw new RuntimeException("不支持的数据流类型");

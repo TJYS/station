@@ -1,32 +1,22 @@
 package com.station.agent.stream.client.tcp;
 
-import com.station.agent.stream.DataStream;
+import com.station.agent.stream.base.BaseClient;
 import com.station.agent.stream.propertys.StreamProperty;
 import io.netty.channel.Channel;
 
-public class TcpClient implements DataStream {
-    private Channel channel;
+public class TcpClient extends BaseClient {
     private StreamProperty property;
-
-    public void setProperty(StreamProperty property) {
-        this.property = property;
-    }
 
     public TcpClient(Channel channel) {
         this.channel = channel;
     }
 
-    @Override
-    public void open() {
-        TcpClientHandler handler = new TcpClientHandler();
-        handler.setOwner(property.getOwner());
-        channel.pipeline().addLast(handler);
+    public void setProperty(StreamProperty property) {
+        this.property = property;
     }
 
     @Override
-    public void close() {
-        channel.disconnect();
-        channel.close();
-        channel = null;
+    protected StreamProperty getProperty() {
+        return property;
     }
 }
