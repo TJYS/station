@@ -22,11 +22,8 @@ public class NtripClient extends BaseClient {
     }
 
     @Override
-    protected void afterOpen() throws Exception {
-        greeting();
-    }
-
-    private void greeting() throws UnsupportedEncodingException {
+    public void open() throws Exception {
+        super.open();
         byte[] tembts = (property.getUser() + ":" + property.getPwd()).getBytes("US-ASCII");
         String encodedUserpassword = new Base64().encodeToString(tembts);
         String greet = String.format("GET /%s HTTP/1.1 \r\n" +

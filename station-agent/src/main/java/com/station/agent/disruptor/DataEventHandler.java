@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class DataEventHandler implements EventHandler<DataEvent> {
     @Override
     public void onEvent(DataEvent dataEvent, long l, boolean b) throws Exception {
-        System.out.println(Arrays.toString(dataEvent.getBytes()));
+        System.out.println(dataEvent.getTopic() + "=====>"+ Arrays.toString(dataEvent.getBytes()));
 //        Receiver receiver = ReceiverManager.find(dataEvent.getTopic());
 //        if (receiver != null){
 //            receiver.onData(dataEvent.getBytes());

@@ -18,4 +18,22 @@ public class Station {
 
     @Column(name = "`station_status`")
     private Short status;
+
+    @Column(name = "`station_net_type`")
+    private Short netType;
+
+    @Column(name = "`station_ip`")
+    private String ip;
+
+    @Column(name = "`station_port`")
+    private Integer port;
+
+    @Column(name = "`station_ntrip_user`")
+    private String ntripUser;
+
+    @Column(name = "station_ntrip_pwd")
+    private String ntripPwd;
+
+    @Column(name = "`station_net_source`")
+    private String ntripSource;
 }

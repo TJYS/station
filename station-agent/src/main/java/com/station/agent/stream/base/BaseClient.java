@@ -6,25 +6,21 @@ import io.netty.channel.Channel;
 
 public abstract class BaseClient implements DataStream {
     protected Channel channel;
+    private final String handlerName = "handler";
 
     @Override
     public void open() throws Exception {
-        BaseHandler handler = getHandler();
+        BaseHandler handler = new BaseHandler();
         handler.setOwner(getProperty().getOwner());
-        channel.pipeline().addLast(handler);
-        afterOpen();
+        channel.pipeline().addLast(handlerName, handler);
     }
 
     @Override
     public void close() {
+        channel.pipeline().remove(handlerName);
         channel.disconnect();
         channel.close();
         channel = null;
-    }
-
-    protected void afterOpen() throws Exception {}
-    protected BaseHandler getHandler(){
-        return new BaseHandler();
     }
 
     protected abstract StreamProperty getProperty();
