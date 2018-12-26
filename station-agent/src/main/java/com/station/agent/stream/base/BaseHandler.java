@@ -1,10 +1,10 @@
-package com.station.agent.stream.tcpclient;
+package com.station.agent.stream.base;
 
 import com.station.agent.disruptor.DisruptorService;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-public class TcpClientHandler extends SimpleChannelInboundHandler<byte[]> {
+public class BaseHandler extends SimpleChannelInboundHandler<byte[]> {
     private String owner;
 
     public void setOwner(String owner) {

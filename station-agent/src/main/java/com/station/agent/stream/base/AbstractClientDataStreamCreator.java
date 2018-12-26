@@ -1,5 +1,6 @@
-package com.station.agent.stream;
+package com.station.agent.stream.base;
 
+import com.station.agent.stream.DataStreamCreator;
 import com.station.agent.stream.propertys.StreamProperty;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;

@@ -1,4 +1,4 @@
-package com.station.agent.stream.tcpclient;
+package com.station.agent.stream.client.tcp;
 
 import com.station.agent.stream.DataStream;
 import com.station.agent.stream.propertys.StreamProperty;
