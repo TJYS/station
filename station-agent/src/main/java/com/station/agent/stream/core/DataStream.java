@@ -1,4 +1,4 @@
-package com.station.agent.stream;
+package com.station.agent.stream.core;
 
 public interface DataStream {
     void open() throws Exception;

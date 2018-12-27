@@ -1,7 +1,6 @@
 package com.station.agent.stream.client.tcp;
 
-import com.station.agent.stream.base.BaseClient;
-import com.station.agent.stream.propertys.StreamProperty;
+import com.station.agent.stream.core.tools.BaseClient;
 import io.netty.channel.Channel;
 
 public class TcpClient extends BaseClient {

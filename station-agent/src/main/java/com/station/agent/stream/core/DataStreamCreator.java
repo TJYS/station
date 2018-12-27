@@ -1,4 +1,4 @@
-package com.station.agent.stream;
+package com.station.agent.stream.core;
 
 import com.station.agent.station.Receiver;
 

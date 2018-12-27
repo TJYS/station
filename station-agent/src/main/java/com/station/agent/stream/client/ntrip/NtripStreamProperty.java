@@ -1,5 +1,6 @@
-package com.station.agent.stream.propertys;
+package com.station.agent.stream.client.ntrip;
 
+import com.station.agent.stream.client.tcp.StreamProperty;
 import lombok.Data;
 
 @Data

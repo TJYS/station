@@ -1,19 +1,14 @@
-package com.station.agent.stream.base;
+package com.station.agent.stream.core.tools;
 
-import com.station.agent.stream.DataStreamCreator;
-import com.station.agent.stream.propertys.StreamProperty;
-import com.station.common.domain.Station;
+import com.station.agent.stream.core.DataStreamCreator;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.bytes.ByteArrayDecoder;
-import io.netty.handler.codec.bytes.ByteArrayEncoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.timeout.IdleStateHandler;
-
-import javax.annotation.PostConstruct;
 
 public abstract class AbstractClientDataStreamCreator implements DataStreamCreator {
     private static final NioEventLoopGroup worker = new NioEventLoopGroup();
@@ -29,8 +24,8 @@ public abstract class AbstractClientDataStreamCreator implements DataStreamCreat
                     @Override
                     protected void initChannel(SocketChannel ch) throws Exception {
                         ch.pipeline().addLast(new IdleStateHandler(SO_TIMEOUT, SO_TIMEOUT, SO_TIMEOUT))
-                                .addLast(new ByteArrayDecoder())
-                                .addLast(new StringEncoder());
+                                .addLast("decoder", new ByteArrayDecoder())
+                                .addLast("encoder", new StringEncoder());
                     }
                 });
     }

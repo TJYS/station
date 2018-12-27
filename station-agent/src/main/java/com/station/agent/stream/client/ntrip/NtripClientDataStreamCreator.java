@@ -1,9 +1,8 @@
 package com.station.agent.stream.client.ntrip;
 
 import com.station.agent.station.Receiver;
-import com.station.agent.stream.DataStream;
-import com.station.agent.stream.base.AbstractClientDataStreamCreator;
-import com.station.agent.stream.propertys.NtripStreamProperty;
+import com.station.agent.stream.core.DataStream;
+import com.station.agent.stream.core.tools.AbstractClientDataStreamCreator;
 import com.station.common.domain.Station;
 import io.netty.channel.Channel;
 import org.springframework.stereotype.Component;

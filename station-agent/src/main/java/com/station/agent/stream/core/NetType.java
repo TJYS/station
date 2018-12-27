@@ -1,4 +1,4 @@
-package com.station.agent.stream.enums;
+package com.station.agent.stream.core;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

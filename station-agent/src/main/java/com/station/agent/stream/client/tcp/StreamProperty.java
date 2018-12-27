@@ -1,4 +1,4 @@
-package com.station.agent.stream.propertys;
+package com.station.agent.stream.client.tcp;
 
 import lombok.Data;
 

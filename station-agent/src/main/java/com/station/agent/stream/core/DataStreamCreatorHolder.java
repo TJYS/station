@@ -1,6 +1,5 @@
-package com.station.agent.stream;
+package com.station.agent.stream.core;
 
-import com.station.agent.stream.enums.NetType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

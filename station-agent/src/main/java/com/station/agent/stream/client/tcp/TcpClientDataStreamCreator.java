@@ -1,9 +1,8 @@
 package com.station.agent.stream.client.tcp;
 
 import com.station.agent.station.Receiver;
-import com.station.agent.stream.base.AbstractClientDataStreamCreator;
-import com.station.agent.stream.DataStream;
-import com.station.agent.stream.propertys.StreamProperty;
+import com.station.agent.stream.core.tools.AbstractClientDataStreamCreator;
+import com.station.agent.stream.core.DataStream;
 import com.station.common.domain.Station;
 import io.netty.channel.Channel;
 import org.springframework.stereotype.Component;

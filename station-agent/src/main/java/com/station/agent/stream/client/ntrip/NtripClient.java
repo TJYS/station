@@ -1,13 +1,9 @@
 package com.station.agent.stream.client.ntrip;
 
-import com.station.agent.stream.base.BaseClient;
-import com.station.agent.stream.base.BaseHandler;
-import com.station.agent.stream.propertys.NtripStreamProperty;
-import com.station.agent.stream.propertys.StreamProperty;
+import com.station.agent.stream.core.tools.BaseClient;
+import com.station.agent.stream.client.tcp.StreamProperty;
 import io.netty.channel.Channel;
 import org.apache.commons.codec.binary.Base64;
-
-import java.io.UnsupportedEncodingException;
 
 public class NtripClient extends BaseClient {
 
