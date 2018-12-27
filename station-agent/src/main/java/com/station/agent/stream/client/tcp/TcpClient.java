@@ -1,5 +1,6 @@
 package com.station.agent.stream.client.tcp;
 
+import com.station.agent.stream.core.StreamProperty;
 import com.station.agent.stream.core.tools.BaseClient;
 import io.netty.channel.Channel;
 

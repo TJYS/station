@@ -1,6 +1,7 @@
 package com.station.agent.stream.client.tcp;
 
 import com.station.agent.station.Receiver;
+import com.station.agent.stream.core.StreamProperty;
 import com.station.agent.stream.core.tools.AbstractClientDataStreamCreator;
 import com.station.agent.stream.core.DataStream;
 import com.station.common.domain.Station;

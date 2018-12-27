@@ -1,7 +1,7 @@
 package com.station.agent.stream.client.ntrip;
 
 import com.station.agent.stream.core.tools.BaseClient;
-import com.station.agent.stream.client.tcp.StreamProperty;
+import com.station.agent.stream.core.StreamProperty;
 import io.netty.channel.Channel;
 import org.apache.commons.codec.binary.Base64;
 
